@@ -457,7 +457,7 @@ fn writeInt(into: []u8, value: u32) usize {
     var i: usize = 10;
     var buf: [10]u8 = undefined;
     while (v >= 100) {
-        const digits = v % 100 * 2;
+        const digits = (v % 100) * 2;
         v /= 100;
         i -= 2;
         buf[i + 1] = small_strings[digits + 1];

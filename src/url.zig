@@ -91,7 +91,7 @@ pub const Url = struct {
         for (0..unescaped_len) |i| {
             const b = input[in_i];
             if (b == '%') {
-                out[i] = decodeHex(input[in_i + 1]) << 4 | decodeHex(input[in_i + 2]);
+                out[i] = (decodeHex(input[in_i + 1]) << 4) | decodeHex(input[in_i + 2]);
                 in_i += 3;
             } else if (b == '+') {
                 out[i] = ' ';
